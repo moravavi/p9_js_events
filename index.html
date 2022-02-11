@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p9_js_events</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style> 
+    @font-face {
+        font-family: "font";
+        src: local("Helvetica");
+    }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: "font";
+        }
+        
+        .container{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            
+        }
+        #un,#dos{
+            width: 50%;
+            height: 100%;
+        }
+        #un{
+            background-color: yellow;
+            color: blue;
+        }
+        #dos{
+            background-color:blue;
+            color: yellow;
+        }
+        p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto Slab', serif;
+            font-size: 5em;
+
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 1024px){
+            .container{
+                flex-direction: column;
+            }
+            #un,#dos{
+                width: 100%;
+            }
+        }
+
+
+    </style>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#un").on("mouseenter", function(){
+                $("#un").css({"background-color": "white", "transform": "rotate(180deg)"})
+
+            })
+            $("#un").on("mouseleave", function(){
+                $("#un").css({"background-color": "yellow", "transform": "rotate(0deg)"})
+                
+            })
+
+        })
+    </script>
+
+
+</head>
+<body>
+    <div class="container">
+        <div id="un">
+            <p>Ana</p>
+        </div>
+        <div id="dos">
+            <p>Mora</p>
+        </div>
+    </div>
+</body>
+</html>
